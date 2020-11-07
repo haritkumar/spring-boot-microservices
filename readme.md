@@ -15,7 +15,7 @@ Configuration servers that Spring Cloud supports are the following backends:
 
 These backends can even be mixed so that, depending on the chosen profile, they will use one or the other.
 
-** Auto refresh config **
+*** Auto refresh config ***
 
 Actuator dependency should be added in client's `pom.xml` to use.
 

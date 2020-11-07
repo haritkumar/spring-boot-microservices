@@ -69,6 +69,7 @@ public class ServiceDescriptionUpdater {
 					
 					if(jsonData.isPresent()){
 						String content = getJSON(serviceId, jsonData.get());
+						System.out.println(content);
 						definitionContext.addServiceDefinition(serviceId, content);
 					}else{
 						logger.error("Skipping service id : {} Error : Could not get Swagegr definition from API ",serviceId);

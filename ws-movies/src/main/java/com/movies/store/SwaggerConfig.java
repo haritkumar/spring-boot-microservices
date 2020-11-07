@@ -1,5 +1,6 @@
 package com.movies.store;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -21,9 +22,18 @@ public class SwaggerConfig {
                 .termsOfServiceUrl("").version("").contact(new Contact("", "", "")).build();
     }
 
+    @Value("${gateway.host}")
+    private String gatewayHost;
+    
+    @Value("${spring.application.name}")
+    private String appName;
+    
+    
     @Bean
     public Docket configureControllerPackageAndConvertors() {
-        return new Docket(DocumentationType.SWAGGER_2).select()
+        return new Docket(DocumentationType.SWAGGER_2)
+        		.host(gatewayHost+"/"+appName)
+        		.select()
                 .apis(RequestHandlerSelectors.basePackage("com.movies.store.controller")).build()
                 .apiInfo(apiInfo());
     }

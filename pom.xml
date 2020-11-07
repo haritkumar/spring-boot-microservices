@@ -27,6 +27,7 @@
 		<module>api-gateway</module>
 		<module>common-data</module>
 		<module>ws-movies</module>
+		<module>documentation</module>
 	</modules>
 
 	<build>

@@ -3,9 +3,9 @@
 #### Start the service in below sequence
 
 #### 1. Config Server
-`http://localhost:8012/actuator`<br>
-`http://localhost:8012/movies-ws/default`<br>
-`http://localhost:8012/application/default`
+`http://127.0.0.1:8012/actuator`<br>
+`http://127.0.0.1:8012/movies-ws/default`<br>
+`http://127.0.0.1:8012/application/default`
 
 Configuration servers that Spring Cloud supports are the following backends:
 
@@ -32,7 +32,7 @@ Include refresh endpoint by adding below entry in `application.properties` or `b
 management.endpoints.web.exposure.include=refresh
 ```
 
-Call refresh endpoint to reload properties without restarting the application. `http://localhost:8080/actuator/refresh` (Use http post method not get)
+Call refresh endpoint to reload properties without restarting the application. `http://127.0.0.1:8080/actuator/refresh` (Use http post method not get)
 
 **@ConfigurationProperties** - Will reload respective properties with actuator refresh call itself.
 
@@ -44,11 +44,16 @@ It can also be done without restart just by annotating the class with `@RefreshS
 
 
 #### 2. Service Discovery
-`http://localhost:8010/`
+`http://127.0.0.1:8010/`
 
 #### 3. Api Gateway
-`http://localhost:8011/movies-ws/movie`
+`http://127.0.0.1:8011/movies-ws/movie`
 
+#### 4. Movie Microservice
+
+#### 5. Cast Microservice
+
+#### 6. Documentation
 
 ### What's Next ? GraphQL
 
